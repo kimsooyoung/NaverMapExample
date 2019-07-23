@@ -72,7 +72,7 @@
         markers: markers,
         disableClickZoom: false,
         gridSize: 120,
-        // icons: [htmlMarker1, htmlMarker2, htmlMarker3, htmlMarker4, htmlMarker5],
+        icons: [htmlMarker1, htmlMarker2, htmlMarker3, htmlMarker4, htmlMarker5],
         indexGenerator: function(count) {
             var index = 0;
 
@@ -88,9 +88,10 @@
 
             return index;    
         },
-        // stylingFunction: function(clusterMarker, count) {
-        //     $(clusterMarker.getElement()).find('div:first-child').text(count);
-        // }
+        stylingFunction: function(clusterMarker, count) {
+            console.log(clusterMarker);
+            $(clusterMarker.getElement()).find('div:first-child').text(count);
+        }
     });
 </script>
 </body>
