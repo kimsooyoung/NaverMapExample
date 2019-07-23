@@ -89,7 +89,8 @@
             return index;    
         },
         stylingFunction: function(clusterMarker, count) {
-            $(clusterMarker.getElement()).find('div:first-child').text(count);
+            clusterMarker.getElement().querySelector('div:first-child').textContent = count;
+            //$(clusterMarker.getElement()).find('div:first-child').text(count);
         }
     });
 </script>
