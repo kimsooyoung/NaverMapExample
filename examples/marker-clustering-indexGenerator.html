@@ -66,7 +66,7 @@
             anchor: N.Point(20, 20)
         };
     
-    console.log(markers);
+    console.log('markers': markers);
     var markerClustering = new MarkerClustering({
         minClusterSize: 2,
         maxZoom: 8,
@@ -91,7 +91,7 @@
             return index;    
         },
         stylingFunction: function(clusterMarker, count) {
-            console.log(clusterMarker.getElement().querySelector('div:first-child'));
+            console.log('ClusterMarker : ', clusterMarker.getElement().querySelector('div:first-child'));
             clusterMarker.getElement().querySelector('div:first-child').textContent = count;
         }
     });
