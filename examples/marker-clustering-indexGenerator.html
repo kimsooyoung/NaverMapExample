@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>마커 클러스터</title>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=nrl7trhz8w"></script>
     <script type="text/javascript" src="../data/accidentdeath.js"></script>
     <script type="text/javascript" src="../src/MarkerClustering.js"></script>
@@ -15,6 +15,7 @@
 <body>
     <div id="map" style="width:100%;height:100%;padding:0;margin:0;"></div>
 <script>
+    const LOGO_URL = 'https://image.rocketpunch.com/company/94596/pump-xingxing_logo_1555784237.png?s=400x400&t=inside';
     var map = new naver.maps.Map("map", {
         zoom: 3,
         center: new naver.maps.LatLng(36.2253017, 127.6460516),
@@ -55,16 +56,17 @@
             anchor: N.Point(20, 20)
         },
         htmlMarker4 = {
-            content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(../images/cluster-marker-4.png);background-size:contain;"></div>',
+            content: `<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(${LOGO_URL});background-size:contain;"></div>`,
             size: N.Size(40, 40),
             anchor: N.Point(20, 20)
         },
         htmlMarker5 = {
-            content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(../images/cluster-marker-5.png);background-size:contain;"></div>',
+            content: `<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(${LOGO_URL});background-size:contain;"></div>`,
             size: N.Size(40, 40),
             anchor: N.Point(20, 20)
         };
-
+    
+    console.log(markers);
     var markerClustering = new MarkerClustering({
         minClusterSize: 2,
         maxZoom: 8,
@@ -89,8 +91,8 @@
             return index;    
         },
         stylingFunction: function(clusterMarker, count) {
-            clusterMarker.getElement().querySelector('div:first-child').textContent = count;
-            //$(clusterMarker.getElement()).find('div:first-child').text(count);
+            console.log(clusterMarker.getElement().querySelector('.scooter-map-page'));
+            clusterMarker.getElement().querySelector('.scooter-map-page').textContent = count;
         }
     });
 </script>
