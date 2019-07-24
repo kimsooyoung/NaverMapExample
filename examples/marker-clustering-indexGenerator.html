@@ -65,7 +65,10 @@
             size: N.Size(40, 40),
             anchor: N.Point(20, 20)
         };
-    
+    var testMarker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(37.3595704, 127.105399),
+        map: map
+    });
     console.log('markers : ', markers);
     var markerClustering = new MarkerClustering({
         minClusterSize: 2,
