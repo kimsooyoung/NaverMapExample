@@ -56,12 +56,12 @@
             anchor: N.Point(20, 20)
         },
         htmlMarker4 = {
-            content: `<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(${LOGO_URL});background-size:contain;"></div>`,
+            content: `<div class=js_marker style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(${LOGO_URL});background-size:contain;"></div>`,
             size: N.Size(40, 40),
             anchor: N.Point(20, 20)
         },
         htmlMarker5 = {
-            content: `<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(${LOGO_URL});background-size:contain;"></div>`,
+            content: `<div class=js_marker style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(${LOGO_URL});background-size:contain;"></div>`,
             size: N.Size(40, 40),
             anchor: N.Point(20, 20)
         };
@@ -88,10 +88,11 @@
                 index = 4;
             }
 
-            return index;    
+            return index;
         },
         stylingFunction: function(clusterMarker, count) {
-            console.log('ClusterMarker : ', clusterMarker.getElement().querySelector('div:first-child'));
+            console.log('ClusterMarker : ', clusterMarker.getElement().querySelector('div:first-child')); 
+            console.log('JS Marker : ', clusterMarker.getElement().querySelector('.js_marker'));
             clusterMarker.getElement().querySelector('.js_marker').textContent = count;
         }
     });
