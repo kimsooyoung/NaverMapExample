@@ -91,8 +91,8 @@
             return index;    
         },
         stylingFunction: function(clusterMarker, count) {
-            console.log(clusterMarker.getElement().querySelector('.scooter-map-page'));
-            clusterMarker.getElement().querySelector('.scooter-map-page').textContent = count;
+            console.log(clusterMarker.getElement().querySelector('div:first-child'));
+            clusterMarker.getElement().querySelector('div:first-child').textContent = count;
         }
     });
 </script>
