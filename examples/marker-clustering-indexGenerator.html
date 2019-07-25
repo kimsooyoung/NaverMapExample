@@ -69,7 +69,7 @@
         position: new naver.maps.LatLng(37.3595704, 127.105399),
         map: map
     });
-    console.log('markers : ', markers);
+    // console.log('markers : ', markers);
     var markerClustering = new MarkerClustering({
         minClusterSize: 2,
         maxZoom: 8,
@@ -94,11 +94,10 @@
             return index;
         },
         stylingFunction: function(clusterMarker, count) {
-            console.log('ClusterMarker : ', clusterMarker.getElement().querySelector('div:first-child')); 
-            console.log('JS Marker : ', clusterMarker.getElement().querySelector('.js_marker'));
             clusterMarker.getElement().querySelector('.js_marker').textContent = count;
         }
     });
+    console.log('flag');
     markerClustering = null;
 </script>
 </body>
